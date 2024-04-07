@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <style>
+      * {
+        border: none;
+        outline: none;
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-family: "digital", sans-serif;
+        text-align: center;
+      }
+
+      @font-face {
+        font-family: "digital";
+        src: url(./fonts/DS-DIGI.TTF);
+      }
+
+      #timer {
+        margin-top: 50px;
+        font-size: 150px;
+        color: #ff2323;
+      }
+
+      button {
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      #startBtn {
+        background-color: #2344ff;
+      }
+      #stopBtn {
+        background-color: #ff2323;
+      }
+      #resetBtn {
+        background-color: #deff23;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="timer">000:00</div>
+    <button id="startBtn">Start Timer</button>
+    <button id="stopBtn">Stop Timer</button>
+    <button id="resetBtn">Reset Timer</button>
+
+    <script>
+      let intervalId;
+      let centiseconds = 0;
+      let seconds = 0;
+
+      function startTimer() {
+        intervalId = setInterval(updateTimer, 10);
+      }
+
+      function stopTimer() {
+        clearInterval(intervalId);
+      }
+
+      function resetTimer() {
+        clearInterval(intervalId);
+        centiseconds = 0;
+        seconds = 0;
+        updateTimerDisplay();
+      }
+
+      function updateTimer() {
+        if (seconds === 999 && centiseconds === 59) {
+          clearInterval(intervalId);
+          document.querySelector("#timer").textContent = "999:59";
+          return;
+        }
+
+        centiseconds++;
+        if (centiseconds === 100) {
+          centiseconds = 0;
+          seconds++;
+        }
+
+        updateTimerDisplay();
+      }
+
+      function updateTimerDisplay() {
+        const centisecondsStr =
+          centiseconds < 10 ? "0" + centiseconds : centiseconds;
+        const secondStr =
+          seconds < 10
+            ? "00" + seconds
+            : seconds < 100
+            ? "0" + seconds
+            : seconds;
+        document.querySelector("#timer").textContent =
+          secondStr + ":" + centisecondsStr;
+      }
+
+      document.querySelector("#startBtn").addEventListener("click", startTimer);
+      document.querySelector("#stopBtn").addEventListener("click", stopTimer);
+      document.querySelector("#resetBtn").addEventListener("click", resetTimer);
+    </script>
+  </body>
+</html>

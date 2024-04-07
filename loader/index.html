@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader Animation</title>
+    <style>
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        background: no-repeat radial-gradient(farthest-side, #19a68c 92%, #0000)
+            top,
+          no-repeat radial-gradient(farthest-side, #f63d3a 92%, #0000) right,
+          no-repeat radial-gradient(farthest-side, #fda543 92%, #0000) bottom,
+          no-repeat radial-gradient(farthest-side, #193b48 92%, #0000) left;
+        background-size: 20px 20px;
+        animation: Ha 1.2s ease-in-out infinite;
+      }
+
+      @keyframes Ha {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="loader"></div>
+    </div>
+  </body>
+</html>

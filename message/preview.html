@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        text-decoration: none;
+      }
+
+      body {
+        background: #f2f2f2;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .chat {
+        width: 360px;
+      }
+
+      .chat-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        border-bottom: 2px solid #ccc;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        background-image: url(./img/download.png);
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .user-info {
+        flex: 1;
+      }
+
+      .user-name {
+        font-weight: bold;
+      }
+
+      .menu {
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .messages {
+        height: 470px;
+        background-color: #fff;
+        padding: 10px;
+        overflow-y: auto;
+      }
+
+      .message {
+        padding-bottom: 10px;
+      }
+
+      .message-body {
+        background-color: #e1e1e1;
+        border-radius: 10px;
+        padding: 10px;
+        width: 250px;
+      }
+
+      .message-input {
+        display: flex;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      .message-input input {
+        flex: 1;
+        margin-right: 10px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .send-button {
+        padding: 8px 15px;
+        background: #1548f0;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="chat">
+        <div class="chat-header">
+          <div class="avatar"></div>
+          <div class="user-info">
+            <div class="user-name">Tegar</div>
+          </div>
+          <div class="menu">...</div>
+        </div>
+        <div class="messages">
+          <div class="message">
+            <div class="message-body">p</div>
+          </div>
+          <div class="message">
+            <div class="message-body">Njo ra mabar</div>
+          </div>
+          <div class="message">
+            <div class="message-body">Login gas</div>
+          </div>
+        </div>
+        <div class="message-input">
+          <input type="text" placeholder="Type your message here" />
+          <button class="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

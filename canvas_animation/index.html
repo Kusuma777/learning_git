@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Animation</title>
+    <style>
+      .wrap {
+        display: flex;
+        justify-content: center;
+      }
+
+      #myCanvas {
+        background: #0be96f;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <canvas id="myCanvas" width="600" height="320"></canvas>
+    </div>
+
+    <script>
+      window.onload = function () {
+        let canvas = document.querySelector("#myCanvas");
+        let ctx = canvas.getContext("2d");
+        x = 0;
+        y = canvas.height / 2;
+        radius = 15;
+        dx = 2;
+
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fillStyle = "white";
+          ctx.fill();
+          ctx.closePath();
+
+          x += dx;
+          if (x > canvas.width + radius) {
+            x = -radius;
+          }
+
+          requestAnimationFrame(draw);
+        }
+        draw();
+      };
+    </script>
+  </body>
+</html>

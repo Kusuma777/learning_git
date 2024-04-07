@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        outline: none;
+        border: none;
+      }
+
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .title {
+        background-color: #fff;
+        width: 340px;
+        padding: 20px 20px;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 2px solid #ccc;
+      }
+
+      .dialog {
+        display: flex;
+        background-color: #fff;
+        width: 360px;
+        padding: 10px;
+        align-items: center;
+        color: #000;
+        border-bottom: 2px solid #ccc;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        background-image: url(./img/download.png);
+        background-size: cover;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .dialog-info {
+        flex: 1;
+      }
+
+      .user-name {
+        font-weight: bold;
+      }
+
+      .message-preview {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="dialogs">
+        <div class="title">- Message -</div>
+        <a href="preview.html">
+          <div class="dialog">
+            <div class="avatar"></div>
+            <div class="message-info">
+              <div class="user-name">Tegar</div>
+              <div class="message-preview">Login gass</div>
+            </div>
+          </div>
+        </a>
+        <a href="preview.html">
+          <div class="dialog">
+            <div class="avatar"></div>
+            <div class="message-info">
+              <div class="user-name">Tegar</div>
+              <div class="message-preview">Login gass</div>
+            </div>
+          </div>
+        </a>
+        <a href="preview.html">
+          <div class="dialog">
+            <div class="avatar"></div>
+            <div class="message-info">
+              <div class="user-name">Tegar</div>
+              <div class="message-preview">Login gass</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
